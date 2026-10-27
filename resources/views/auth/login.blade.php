@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Perpustakaan</title>
+
+    <style>     
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background:
+                radial-gradient(circle at top left, #D1E2F3 0, transparent 35%),
+                linear-gradient(135deg, #F0F0DC, #F0D8B6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .login-card {
+            position: relative;
+            overflow: hidden;
+            background: #FFFFFF;
+            width: 100%;
+            max-width: 420px;
+            padding: 40px 36px 32px;
+            border-radius: 24px;
+            border: 1px solid #B3926F;
+            box-shadow: 0 22px 55px rgba(3, 42, 66, 0.18);
+        }
+
+        .logo {
+            width: 76px;
+            height: 76px;
+            background: #B3926F;
+            color: #FFFFFF;
+            border: 5px solid #F0D8B6;
+            border-radius: 23px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            margin: 0 auto 22px;
+            box-shadow: 0 6px 15px rgba(179, 146, 111, 0.25);
+        }
+
+        h1 {
+            color: #032A42;
+            text-align: center;
+            font-size: 27px;
+            margin: 0 0 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #8C6A4D;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: #032A42;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 9px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #D9C4AA;
+            border-radius: 11px;
+            font-size: 14px;
+            color: #032A42;
+            background: #FCFAF6;
+            outline: none;
+            transition: 0.25s;
+        }
+
+        input:focus {
+            border-color: #B3926F;
+            background: #FFFFFF;
+            box-shadow: 0 0 0 4px rgba(179, 146, 111, 0.18);
+        }
+
+        .login-button {
+            width: 100%;
+            border: 1px solid #9C7957;
+            border-radius: 11px;
+            background: #B3926F;
+            color: #FFFFFF;
+            padding: 15px;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            margin-top: 8px;
+            box-shadow: 0 7px 15px rgba(179, 146, 111, 0.25);
+            transition: 0.25s;
+        }
+
+        .login-button:hover {
+            background: #F0D8B6;
+            border-color: #F0D8B6;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(3, 42, 66, 0.2);
+        }
+
+        .message {
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 13px;
+            margin-bottom: 16px;
+        }
+
+        .error {
+            background: #F0D8B6;
+            color: #032A42;
+            border-left: 4px solid #B3926F;
+        }
+
+        .success {
+            background: #D1E2F3;
+            color: #032A42;
+            border-left: 4px solid #032A42;
+        }
+
+        .footer {
+            text-align: center;
+            color: #8C6A4D;
+            font-size: 12px;
+            line-height: 1.6;
+            margin-top: 28px;
+            padding-top: 18px;
+            border-top: 1px solid #E9DFD2;
+        }
+
+        @media (max-width: 480px) {
+            .login-card {
+                padding: 36px 23px 28px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-card">
+        <div class="logo">📚</div>
+
+        <h1>Selamat Datang</h1>
+        <p class="subtitle">Sistem Informasi Perpustakaan</p>
+
+        @if (session('success'))
+            <div class="message success">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        @if ($errors->any())
+            <div class="message error">
+                {{ $errors->first() }}
+            </div>
+        @endif
+
+        <form action="{{ route('login.process') }}" method="POST">
+            @csrf
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value="{{ old('email') }}"
+                    placeholder="Masukkan email"
+                    autocomplete="username"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Masukkan password"
+                    autocomplete="current-password"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="login-button">
+                Login
+            </button>
+        </form>
+
+        <div class="footer">
+            © {{ date('Y') }} Sistem Informasi Perpustakaan
+        </div>
+    </div>
+</body>
+</html>
