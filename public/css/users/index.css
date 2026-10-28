@@ -1,0 +1,110 @@
+
+.users-page h1 {
+    color: #032A42;
+    font-size: 30px;
+    margin: 0 0 12px;
+}
+
+.users-page p {
+    line-height: 1.6;
+}
+
+.users-actions {
+    margin-top: 24px;
+}
+
+.users-page .users-add,
+.users-page .users-edit,
+.users-page .users-delete {
+    display: inline-block;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.users-page .users-add {
+    background: #032A42;
+    color: #FFFFFF;
+}
+
+.users-page .users-add:hover {
+    background: #064667;
+}
+
+.users-page .users-edit {
+    background: #B3926F;
+    color: #FFFFFF;
+}
+
+.users-page .users-delete {
+    background: #8B3030;
+    color: #FFFFFF;
+}
+
+.users-page .users-table-wrapper {
+    width: 100%;
+    margin-top: 24px;
+    overflow-x: auto;
+    border-radius: 10px;
+}
+
+.users-page .users-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #FFFFFF;
+}
+
+.users-page .users-table th,
+.users-page .users-table td {
+    padding: 15px 16px;
+    text-align: left;
+    border-bottom: 1px solid #D1E2F3;
+}
+
+.users-page .users-table th {
+    background: #032A42;
+    color: #FFFFFF;
+}
+
+.users-page .users-table tbody tr:nth-child(even) td {
+    background: #F4F7FA;
+}
+
+.users-page .users-table tbody tr:hover td {
+    background: #F0D8B6;
+}
+
+.users-page .users-table form {
+    display: inline;
+}
+
+.users-page .users-message {
+    padding: 12px 15px;
+    color: #27633B;
+    background: #E7F3E8;
+    border-radius: 8px;
+}
+
+.users-page .users-error {
+    padding: 12px 15px;
+    color: #8B3030;
+    background: #FBEAEA;
+    border-radius: 8px;
+}
+
+@media (max-width: 700px) {
+    .users-page h1 {
+        font-size: 25px;
+    }
+
+    .users-page .users-table {
+        min-width: 580px;
+    }
+}
