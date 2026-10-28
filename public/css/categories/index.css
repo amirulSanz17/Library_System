@@ -1,0 +1,158 @@
+/* Container Utama */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #032A42; /* Prussian */
+}
+
+/* Judul Halaman */
+h2 {
+    margin: 0 0 24px 0;
+    color: #032A42; /* Prussian */
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* Tombol Tambah Kategori (.btn-add) disesuaikan dengan .btn-primary anggota */
+.btn-add {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    background: #032A42; /* Prussian */
+    color: #ffffff;
+    margin-bottom: 24px;
+    transition: 0.2s ease;
+}
+
+.btn-add:hover {
+    background: #064363;
+}
+
+/* Notifikasi / Alert Sukses */
+.alert-success {
+    margin-bottom: 20px;
+    padding: 14px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    background: #e4f5e8;
+    color: #216b35;
+    border: 1px solid #b8e3c2;
+}
+
+/* Notifikasi / Alert Error */
+.alert-error {
+    margin-bottom: 20px;
+    padding: 14px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    background: #fde8e8;
+    color: #9b1c1c;
+    border: 1px solid #f8b4b4;
+}
+
+/* Wrapper Tabel */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    margin-bottom: 24px;
+}
+
+/* Struktur Tabel */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+/* Header Tabel disesuaikan warna gelap anggota */
+thead {
+    background: #032A42; /* Prussian */
+    color: #ffffff;
+}
+
+th, td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 14px;
+}
+
+th {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Efek Hover Baris */
+tbody tr:hover {
+    background: #f4f8fc; /* Columbia light accent */
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Link Edit di dalam kolom Aksi disesuaikan dengan .btn-edit anggota */
+td a:not(.btn-add) {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #D1E2F3; /* Columbia */
+    color: #032A42; /* Prussian */
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+td a:not(.btn-add):hover {
+    background: #b9d4ed;
+}
+
+/* Form pembungkus tombol hapus agar posisinya inline */
+.action-form {
+    display: inline-block;
+    margin: 0;
+}
+
+/* Tombol Hapus disesuaikan dengan .btn-delete anggota */
+.btn-delete {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #b83b3b;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+    font-family: inherit;
+}
+
+.btn-delete:hover {
+    background: #922d2d;
+}
+
+/* Wrapper Pagination */
+.pagination-wrapper {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination-wrapper nav svg {
+    height: 16px;
+    width: 16px;
+}

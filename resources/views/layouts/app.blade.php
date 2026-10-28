@@ -7,25 +7,43 @@
 
     <title>@yield('title', 'Library System')</title>
 
+    <link rel="stylesheet" href="{{ asset('css/layout.css') }}">
+
+    @stack('styles')
+
 </head>
 
 <body>
-    <header>
-        <h1>Library System</h1>
+    <header class="app-header">
+        <a href="/dashboard" class="brand">Library System</a>
 
-        <nav>
+        <nav class="app-nav">
             <a href="/dashboard">Dashboard</a>
             <a href="/books">Books</a>
             <a href="{{ route('categories.index') }}">Categories</a>
-            <a href="/members">Members</a>
+            <a href="{{ route('members.index') }}">Members</a>
+            <a href="{{ route('users.index') }}">Users</a>
         </nav>
+
+        <div class="user-info">
+            @auth
+                <span>{{ auth()->user()->name }}</span>
+
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="logout-button">
+                        Logout
+                    </button>
+                </form>
+            @endauth
+        </div>
     </header>
 
-    <main>
+    <main class="app-main">
         @yield('content')
     </main>
 
-    <footer>
+    <footer class="app-footer">
         <p>Library System &copy; {{ date('Y') }}</p>
     </footer>
 </body>

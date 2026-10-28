@@ -1,0 +1,150 @@
+.members-page {
+    color: #032A42;
+}
+
+.members-page .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.members-page .page-title {
+    margin: 0;
+    color: #032A42;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.members-page .page-description {
+    margin-top: 6px;
+    color: #666;
+    font-size: 14px;
+}
+
+.members-page .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.members-page .btn-primary {
+    background: #032A42;
+    color: #fff;
+}
+
+.members-page .btn-primary:hover {
+    background: #064363;
+}
+
+.members-page .btn-edit {
+    background: #D1E2F3;
+    color: #032A42;
+}
+
+.members-page .btn-edit:hover {
+    background: #b9d4ed;
+}
+
+.members-page .btn-delete {
+    background: #b83b3b;
+    color: #fff;
+}
+
+.members-page .btn-delete:hover {
+    background: #922d2d;
+}
+
+.members-page .alert {
+    margin-bottom: 20px;
+    padding: 14px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.members-page .alert-success {
+    background: #e4f5e8;
+    color: #216b35;
+    border: 1px solid #b8e3c2;
+}
+
+.members-page .table-container {
+    width: 100%;
+    overflow-x: auto;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+}
+
+.members-page .member-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+.members-page .member-table thead {
+    background: #032A42;
+    color: #fff;
+}
+
+.members-page .member-table th,
+.members-page .member-table td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 14px;
+}
+
+.members-page .member-table th {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.members-page .member-table tbody tr:hover {
+    background: #f4f8fc;
+}
+
+.members-page .member-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.members-page .action-buttons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.members-page .action-buttons form {
+    margin: 0;
+}
+
+.members-page .empty-state {
+    padding: 32px 16px;
+    text-align: center;
+    color: #777;
+}
+
+@media (max-width: 600px) {
+    .members-page .page-title {
+        font-size: 23px;
+    }
+
+    .members-page .page-header {
+        align-items: flex-start;
+    }
+
+    .members-page .btn {
+        padding: 9px 12px;
+    }
+}
